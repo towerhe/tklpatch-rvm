@@ -1,0 +1,23 @@
+#!/bin/bash -ex
+install()
+{
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+# Rename the host
+HOSTNAME=rvm
+echo "$HOSTNAME" > /etc/hostname
+sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
+
+# Use mirrors.163.com as the default apt repository
+rm -f /etc/apt/sources.list.d/*.list
+apt-get update
+
+# Install rvm
+install curl git-core
+bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+echo 'export rvm_make_flags="-j2"' >> /etc/rvmrc

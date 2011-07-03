@@ -1,0 +1,5 @@
+deb http://mirrors.163.com/ubuntu lucid main universe multiverse restricted
+deb http://mirrors.163.com/ubuntu lucid-backports main universe multiverse restricted
+deb http://mirrors.163.com/ubuntu lucid-proposed main universe multiverse restricted
+deb http://mirrors.163.com/ubuntu lucid-security main universe multiverse restricted
+deb http://mirrors.163.com/ubuntu lucid-updates main universe multiverse restricted
