@@ -1,0 +1,7 @@
+h3. Usage:
+
+<pre>
+  <code>
+    sudo tklpatch turnkey-core-11.1-lucid-x86.iso rvm
+  </code>
+</pre>
