@@ -13,6 +13,11 @@ HOSTNAME=rvm
 echo "$HOSTNAME" > /etc/hostname
 sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
 
+# Enable locale zh_CN.UTF-8
+/usr/share/locales/install-language-pack zh_CN.UTF-8
+echo 'LANG=zh_CN.UTF-8' > /etc/default/locale
+echo 'LC_ALL=zh_CN.UTF-8' >> /etc/default/locale
+
 # Use mirrors.163.com as the default apt repository
 rm -f /etc/apt/sources.list.d/*.list
 apt-get update
